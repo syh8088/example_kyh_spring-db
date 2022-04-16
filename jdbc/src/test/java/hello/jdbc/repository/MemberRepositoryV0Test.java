@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
-class MemberRepositoryTest {
+class MemberRepositoryV0Test {
 
     MemberRepositoryV0 repository = new MemberRepositoryV0();
 
