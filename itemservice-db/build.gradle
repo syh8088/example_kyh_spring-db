@@ -8,6 +8,18 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+/**
+ * 주의! - 하이버네이트 버그
+ * 
+ * 하이버네이트 5.6.6 ~ 5.6.7 을 사용하면 Like 문장을 사용할 때 다음 예외가 발생한다.
+ * 스프링 부트 2.6.5 버전은 문제가 되는 하이버네이트 5.6.7을 사용한다.
+ * 
+ * java.lang.IllegalArgumentException: Parameter value [\] did not match expected type [java.lang.String (n/a)]
+ * 
+ * build.gradle에 다음을 추가해서 하이버네이트 버전을 문제가 없는 5.6.5.Final 로 맞추자
+ */
+ext["hibernate.version"] = "5.6.5.Final"
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
